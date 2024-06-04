@@ -83,7 +83,7 @@ def register(inDir):
 			fs.saveAsTiff(outDir + "/" +"Reg_Stack.tif")
 			#Export to RGB tifs with channels separated and partially pseudo-colored
 			#Need to expand pseudo-coloring to include 16 different colors
-			IJ.run("HiPlex ConvertForPhotoshop Part2", "specify=" + outDir);
+			#IJ.run("HiPlex ConvertForPhotoshop Part2", "specify=" + outDir);
 		
 def createMIP(stack):
 	mip = ZProjector(stack)
@@ -104,7 +104,7 @@ def export(workFile, outDir, inInclude, inExclude, inMaxBool):
   		options.setSeriesOn(f, True)
   		name = omeMeta.getImageName(f)
   		if (inInclude in name) or (inInclude == "<NONE>"):
-  			if (inExclude not in name) or (inExclude == "<NONE"):
+  			if (inExclude not in name) or (inExclude == "<NONE>"):
   				print "processing: ", name
   				imps = BF.openImagePlus(options)
   				if (inMaxBool == True):
